@@ -1,4 +1,4 @@
-package com.dhakanewsclub.test;
+package com.dhakanewsclub.test.ui;
 
 import android.os.Bundle;
 
@@ -12,7 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dhakanewsclub.test.MainViewModel;
+import com.dhakanewsclub.test.adapter.ResultAdapter;
+import com.dhakanewsclub.test.ViewModelFactory;
 import com.dhakanewsclub.test.databinding.FragmentSelectionResultBinding;
+
+import java.util.Collections;
 
 
 public class SelectionResultFragment extends Fragment {
@@ -48,6 +53,7 @@ public class SelectionResultFragment extends Fragment {
 
     }
     private void iniRecyclerView(){
+        if(mMainViewModel.result!=null) Collections.sort(mMainViewModel.result);
         mResultAdapter = new ResultAdapter(mMainViewModel.result);
         mFragmentSelectionResultBinding.resultRecycler.setAdapter(mResultAdapter);
         mFragmentSelectionResultBinding.resultRecycler.setLayoutManager(new LinearLayoutManager(this.getActivity(),LinearLayoutManager.HORIZONTAL,false));

@@ -1,4 +1,4 @@
-package com.dhakanewsclub.test;
+package com.dhakanewsclub.test.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dhakanewsclub.test.MainViewModel;
+import com.dhakanewsclub.test.R;
+import com.dhakanewsclub.test.ViewModelFactory;
 import com.dhakanewsclub.test.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

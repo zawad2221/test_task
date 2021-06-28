@@ -1,4 +1,4 @@
-package com.dhakanewsclub.test;
+package com.dhakanewsclub.test.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,13 +9,14 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dhakanewsclub.test.R;
 import com.dhakanewsclub.test.databinding.ListGroupBinding;
 import com.dhakanewsclub.test.model.Category;
 import com.dhakanewsclub.test.model.SubCategory;
 
 import java.util.List;
 
-class Adapter extends BaseExpandableListAdapter {
+public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     public interface OnClick{
         public void onCategoryClick(int position, boolean add);
@@ -26,7 +27,7 @@ class Adapter extends BaseExpandableListAdapter {
     List<Category> mCategoryList;
     OnClick mOnClick;
 
-    public Adapter(Context context, List<Category> categoryList, OnClick onClick) {
+    public ExpandableListAdapter(Context context, List<Category> categoryList, OnClick onClick) {
         this.mContext = context;
         this.mCategoryList = categoryList;
         this.mOnClick = onClick;

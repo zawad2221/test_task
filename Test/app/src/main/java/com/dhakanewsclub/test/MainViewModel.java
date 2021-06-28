@@ -10,7 +10,7 @@ import com.dhakanewsclub.test.model.Category;
 import java.util.ArrayList;
 import java.util.List;
 
-class MainViewModel extends ViewModel {
+public class MainViewModel extends ViewModel {
     Repository mRepository;
 
     private MutableLiveData<List<Category>> category;

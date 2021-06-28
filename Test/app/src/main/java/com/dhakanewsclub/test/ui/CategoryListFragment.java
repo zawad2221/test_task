@@ -1,4 +1,4 @@
-package com.dhakanewsclub.test;
+package com.dhakanewsclub.test.ui;
 
 import android.os.Bundle;
 
@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dhakanewsclub.test.adapter.ExpandableListAdapter;
+import com.dhakanewsclub.test.MainViewModel;
+import com.dhakanewsclub.test.ViewModelFactory;
 import com.dhakanewsclub.test.databinding.FragmentCategoryListBinding;
 import com.dhakanewsclub.test.model.Category;
 import com.dhakanewsclub.test.model.SubCategory;
@@ -71,7 +74,7 @@ public class CategoryListFragment extends Fragment {
         });
     }
     private void initListView(){
-        Adapter adapter = new Adapter(getContext(), mMainViewModel.getCategory().getValue(), new Adapter.OnClick() {
+        ExpandableListAdapter expandableListAdapter = new ExpandableListAdapter(getContext(), mMainViewModel.getCategory().getValue(), new ExpandableListAdapter.OnClick() {
             @Override
             public void onCategoryClick(int position, boolean add) {
                 Log.d("DEBUGING","cat click "+position);
@@ -119,7 +122,7 @@ public class CategoryListFragment extends Fragment {
                 }
             }
         });
-        mFragmentCategoryListBinding.listView.setAdapter(adapter);
+        mFragmentCategoryListBinding.listView.setAdapter(expandableListAdapter);
 
 
 

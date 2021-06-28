@@ -1,8 +1,7 @@
-package com.dhakanewsclub.test;
+package com.dhakanewsclub.test.adapter;
 
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -12,7 +11,7 @@ import com.dhakanewsclub.test.databinding.ResultItemBinding;
 
 import java.util.List;
 
-class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultViewHolder>{
+public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultViewHolder>{
     List<String> name;
 
     public ResultAdapter(List<String> name) {
